@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import summary from "rollup-plugin-summary";
-import {terser} from "rollup-plugin-terser";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
+import summary from "rollup-plugin-summary";
+import { terser } from "rollup-plugin-terser";
 
 export default {
-  input: "my-element.js",
+  input: "dist/my-element.js",
   output: {
-    file: "my-element.bundled.js",
+    file: "dist/my-element.bundled.js",
     format: "esm",
   },
   onwarn(warning) {
@@ -21,7 +21,7 @@ export default {
     }
   },
   plugins: [
-    replace({"Reflect.decorate": "undefined"}),
+    replace({ "Reflect.decorate": "undefined" }),
     resolve(),
     /**
      * This minification setup serves the static site generation.

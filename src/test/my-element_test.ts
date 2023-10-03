@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {MyElement} from "../my-element.js";
+import { MyElement } from "../my-element.js";
 
-import {assert, fixture} from "@open-wc/testing";
-import {html} from "lit/static-html.js";
+import { assert, fixture } from "@open-wc/testing";
+import { html } from "lit/static-html.js";
 
 suite("my-element", () => {
   test("is defined", () => {
@@ -22,6 +22,8 @@ suite("my-element", () => {
       `
       <h1>Hello, World!</h1>
       <button part="button">Click Count: 0</button>
+      <my-counter count="0">
+      </my-counter>
       <slot></slot>
     `
     );
@@ -34,6 +36,8 @@ suite("my-element", () => {
       `
       <h1>Hello, Test!</h1>
       <button part="button">Click Count: 0</button>
+      <my-counter count="0">
+      </my-counter>
       <slot></slot>
     `
     );
@@ -49,6 +53,8 @@ suite("my-element", () => {
       `
       <h1>Hello, World!</h1>
       <button part="button">Click Count: 1</button>
+      <my-counter count="1">
+      </my-counter>
       <slot></slot>
     `
     );

@@ -14,8 +14,8 @@ import { customElement, property } from "lit/decorators.js";
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement("my-element")
-export class MyElement extends LitElement {
+@customElement("my-counter")
+export class MyCounter extends LitElement {
   static override styles = css`
     :host {
       display: block;
@@ -26,12 +26,6 @@ export class MyElement extends LitElement {
   `;
 
   /**
-   * The name to say "Hello" to.
-   */
-  @property()
-  name = "World";
-
-  /**
    * The number of times the button has been clicked!!
    */
   @property({ type: Number })
@@ -39,11 +33,10 @@ export class MyElement extends LitElement {
 
   override render() {
     return html`
-      <h1>${this.sayHello(this.name)}!</h1>
+      <h1>My Counter</h1>
       <button @click=${this._onClick} part="button">
         Click Count: ${this.count}
       </button>
-      <my-counter count=${this.count}></my-counter>
       <slot></slot>
     `;
   }
@@ -64,6 +57,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "my-element": MyElement;
+    "my-counter": MyCounter;
   }
 }
